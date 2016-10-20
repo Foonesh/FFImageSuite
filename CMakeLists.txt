@@ -20,4 +20,4 @@ set(HEADERS
 
 add_executable(${PROJECT_NAME} ${SOURCES} ${HEADERS})
 
-target_include_directories(${PROJECT_NAME} PRIVATE ${Boost_INCLUDE_DIRS} inc)
+target_include_directories(${PROJECT_NAME} PRIVATE inc)
