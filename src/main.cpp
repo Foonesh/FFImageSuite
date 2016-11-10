@@ -1,4 +1,4 @@
-#include <commands\command_factory.hpp>
+#include <commands/command_factory.hpp>
 
 #include <iostream>
 #include <stdexcept>

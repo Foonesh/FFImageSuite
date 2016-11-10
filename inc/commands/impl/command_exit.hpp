@@ -1,6 +1,6 @@
 #pragma once
 
-#include <commands\command.hpp>
+#include <commands/command.hpp>
 
 class command_exit
   : public command
