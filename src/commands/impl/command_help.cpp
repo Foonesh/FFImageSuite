@@ -1,5 +1,5 @@
-#include <commands\impl\command_help.hpp>
-#include <commands\command_factory.hpp>
+#include <commands/impl/command_help.hpp>
+#include <commands/command_factory.hpp>
 
 #include <iostream>
 

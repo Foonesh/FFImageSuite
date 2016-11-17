@@ -1,6 +1,6 @@
-#include <commands\command_factory.hpp>
-#include <commands\impl\command_exit.hpp>
-#include <commands\impl\command_help.hpp>
+#include <commands/command_factory.hpp>
+#include <commands/impl/command_exit.hpp>
+#include <commands/impl/command_help.hpp>
 
 template <typename T>
 std::pair<std::string, std::function<command_factory::pointer(const std::string&)>> make_handler()
