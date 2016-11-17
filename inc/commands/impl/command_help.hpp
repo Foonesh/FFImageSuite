@@ -7,7 +7,7 @@ class command_help
 {
 
   public:
-    command_help(const std::string& commandline) {}
+
     virtual void execute() override;
 
     static const std::string name_;

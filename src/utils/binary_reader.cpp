@@ -2,6 +2,7 @@
 
 #include <fstream>
 #include <sstream>
+#include <stdexcept>
 
 binary_reader::binary_reader(const std::string& filepath)
   :filepath(filepath)

@@ -13,5 +13,5 @@ class binary_reader
 
     std::string get_actual_file_contents();
 
-}
+};
 

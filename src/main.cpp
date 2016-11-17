@@ -13,7 +13,7 @@ int main()
       auto cmd(command_factory::construct(line));
       cmd->execute();
     }
-    catch(const std::out_of_range& e)
+    catch(const std::exception& e)
     {
       std::cerr << e.what() << '\n';
     }

@@ -8,6 +8,6 @@ const std::string command_help::name_("help");
 void command_help::execute()
 {
   std::cout << "List of supported commands\n";
-  for (const auto& elem : command_factory::factory_method_table)
+  for (const auto& elem : command_factory::get_command_dictionary())
     std::cout << elem.first << '\n';
 }

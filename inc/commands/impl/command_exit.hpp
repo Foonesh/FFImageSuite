@@ -7,7 +7,7 @@ class command_exit
 {
 
   public:
-    command_exit(const std::string& commandline) {}
+
     virtual void execute() override;
 
     static const std::string name_;
