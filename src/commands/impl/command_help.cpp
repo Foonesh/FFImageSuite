@@ -3,6 +3,8 @@
 
 #include <iostream>
 
+const std::string command_help::name_("help");
+
 void command_help::execute()
 {
   std::cout << "List of supported commands\n";

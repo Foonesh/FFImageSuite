@@ -10,6 +10,3 @@ class command
   protected:
     //tu wyladuje jakas klasa z mozgiem i konstruktor z command line
 };
-
-template <typename T>
-const std::string& get_command_name();

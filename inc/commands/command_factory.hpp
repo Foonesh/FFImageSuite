@@ -9,9 +9,10 @@
 
 class command_factory
 {
-    using pointer = std::unique_ptr<command>;
 
   public:
+
+    using pointer = std::unique_ptr<command>;
 
     static pointer construct(const std::string& commandline);
 

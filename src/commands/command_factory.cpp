@@ -2,25 +2,26 @@
 #include <commands\impl\command_exit.hpp>
 #include <commands\impl\command_help.hpp>
 
+template <typename T>
+std::pair<std::string, std::function<command_factory::pointer(const std::string&)>> make_handler()
+{
+  return
+  {
+    T::name_, [](const std::string & commandline)
+    {
+      return std::make_unique<T>(commandline);
+    }
+  };
+}
+
 const std::map<std::string, std::function<command_factory::pointer(const std::string&)>> command_factory::factory_method_table
 {
-  {
-    get_command_name<command_exit>(), [](const std::string & commandline)
-    {
-      return std::make_unique<command_exit>(commandline);
-    }
-  },
-  {
-    get_command_name<command_help>(), [](const std::string & commandline)
-    {
-      return std::make_unique<command_help>(commandline);
-    }
-  },
+  make_handler<command_exit>(),
+  make_handler<command_help>(),
 };
 
 command_factory::pointer command_factory::construct(const std::string& commandline)
 {
-
   // tu oczywisce potrzeba jakiegos tokenizera aby rozbic komende i parametry
   // aby map::at() dostal jedynie polecenie do porownania
   //temp wersja dla testu helpa i exita
