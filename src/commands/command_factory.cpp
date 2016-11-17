@@ -9,7 +9,7 @@ std::pair<std::string, std::function<command_factory::pointer(const std::string&
   {
     T::name_, [](const std::string & commandline)
     {
-      return std::make_unique<T>(commandline);
+      return std::unique_ptr<T>(new T(commandline));//std::make_unique<T>(commandline);
     }
   };
 }
