@@ -3,7 +3,7 @@
 #include <iostream>
 #include <stdexcept>
 
-int main(void)
+int main()
 {
   std::string line;
   while(std::cin >> line)
