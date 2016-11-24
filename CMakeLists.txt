@@ -11,6 +11,7 @@ set(SOURCES
 	src/commands/impl/command_help.cpp
 	src/commands/impl/command_load_bmp.cpp
 	src/utils/binary_reader.cpp
+	tests/main.cpp
 )
 
 set(HEADERS
