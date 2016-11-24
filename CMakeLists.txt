@@ -1,14 +1,16 @@
-cmake_minimum_required(VERSION 3.5)
+cmake_minimum_required(VERSION 2.8)
 
 project(Converter)
 
-set (CMAKE_CXX_STANDARD 14)
+set (CMAKE_CXX_STANDARD 11)
 
 set(SOURCES
 	src/main.cpp
 	src/commands/command_factory.cpp
 	src/commands/impl/command_exit.cpp
 	src/commands/impl/command_help.cpp
+	src/commands/impl/command_load_bmp.cpp
+	src/utils/binary_reader.cpp
 )
 
 set(HEADERS
@@ -16,6 +18,8 @@ set(HEADERS
 	inc/commands/command.hpp
 	inc/commands/impl/command_exit.hpp
 	inc/commands/impl/command_help.hpp
+	inc/commands/impl/command_load_bmp.hpp
+	inc/utils/binary_reader.hpp
 )
 
 add_executable(${PROJECT_NAME} ${SOURCES} ${HEADERS})
