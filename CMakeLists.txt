@@ -1,18 +1,25 @@
-cmake_minimum_required(VERSION 3.6)
-project(Application)
+cmake_minimum_required(VERSION 3.5)
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
+project(Converter)
 
-set(SOURCE_FILES
-        Application/main.cpp)
+set (CMAKE_CXX_STANDARD 14)
 
-add_executable(Application ${SOURCE_FILES})
+set(SOURCES
+	src/main.cpp
+	src/commands/command_factory.cpp
+	src/commands/impl/command_exit.cpp
+	src/commands/impl/command_help.cpp
+)
 
-project(Tests)
+set(HEADERS
+	inc/commands/command_factory.hpp
+	inc/commands/command.hpp
+	inc/commands/impl/command_exit.hpp
+	inc/commands/impl/command_help.hpp
+)
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
+add_executable(${PROJECT_NAME} ${SOURCES} ${HEADERS})
 
-set(SOURCE_FILES
-        Tests/main.cpp)
+target_include_directories(${PROJECT_NAME} PRIVATE inc)
 
-add_executable(Tests ${SOURCE_FILES})
+target_compile_options(${PROJECT_NAME} PRIVATE -Wall)
