@@ -10,7 +10,7 @@ void command_load_bmp::execute()
   std::string bmp_name;
   std::cin>>bmp_name;
   binary_reader reader(bmp_name);
-  std::string contents(std::move(reader.get_actual_file_contents()));
+  std::string contents(reader.get_actual_file_contents());
   if(contents.size() < bmp_header_size_)
     throw std::runtime_error("File is malformed, missing header");
   if(contents[0]!=0x42 || contents[1]!=0x4D)
