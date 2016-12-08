@@ -10,6 +10,7 @@ set(SOURCES
 	src/commands/impl/command_exit.cpp
 	src/commands/impl/command_help.cpp
 	src/commands/impl/command_load_bmp.cpp
+	src/commands/impl/command_man.cpp
 	src/utils/binary_reader.cpp
 	tests/main.cpp
 )
@@ -20,6 +21,7 @@ set(HEADERS
 	inc/commands/impl/command_exit.hpp
 	inc/commands/impl/command_help.hpp
 	inc/commands/impl/command_load_bmp.hpp
+	inc/commands/impl/command_man.hpp
 	inc/utils/binary_reader.hpp
 )
 

@@ -2,6 +2,7 @@
 #include <commands/impl/command_exit.hpp>
 #include <commands/impl/command_help.hpp>
 #include <commands/impl/command_load_bmp.hpp>
+#include <commands/impl/command_man.hpp>
 
 template <typename T>
 std::pair<std::string, command_factory::factory_method> make_handler()
@@ -30,6 +31,7 @@ const command_factory::dictionary& command_factory::get_command_dictionary()
     make_handler<command_exit>(),
     make_handler<command_help>(),
     make_handler<command_load_bmp>(),
+	make_handler<command_man>()
   };
   return factory_method_table;
 }
