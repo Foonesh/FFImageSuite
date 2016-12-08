@@ -17,11 +17,11 @@ void command_help::execute()
   std::cout << "-divide number    also divide the processed image to [number] smaller images. [number] must be a multiple of 4.";
   std::cout << "-reverse          reverse the colours in the resulting image(s)";
   std::cout << "-rotate amount    rotate the resulting image(s) by [amount] degrees. [amount] must be either 90, 180 or 270.";
-  std::cout << "FILES"
-  std::cout << "(TODO)Location of config files etc."
+  std::cout << "FILES";
+  std::cout << "(TODO)Location of config files etc.";
   std::cout << "KNOWN BUGS";
-  std::cout << "None yet"
+  std::cout << "None yet";
   std::cout << "AUTHORS";
-  std::cout << "Daniel Koperniak, Marcin Owcarz, Krzysztof Pszczo³a";
+  std::cout << "Daniel Koperniak, Marcin Owcarz, Krzysztof Pszczola";
   std::cout << "LAST CHANGE: 08.12.2016";
 }
