@@ -2,6 +2,8 @@ cmake_minimum_required(VERSION 3.5)
 
 project(Converter)
 
+add_subdirectory(tests)
+
 set (CMAKE_CXX_STANDARD 14)
 
 set(SOURCES
@@ -12,7 +14,6 @@ set(SOURCES
 	src/commands/impl/command_load_bmp.cpp
 	src/commands/impl/command_man.cpp
 	src/utils/binary_reader.cpp
-	tests/main.cpp
 )
 
 set(HEADERS
@@ -30,3 +31,4 @@ add_executable(${PROJECT_NAME} ${SOURCES} ${HEADERS})
 target_include_directories(${PROJECT_NAME} PRIVATE inc)
 
 target_compile_options(${PROJECT_NAME} PRIVATE -Wall)
+
