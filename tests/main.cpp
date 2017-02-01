@@ -1,6 +1,5 @@
 #include <iostream>
 #include <gtest/gtest.h>
-#include "../inc/commands/impl/command_exit.hpp"
 
 TEST(ff, exitWhenExitCommandPassed)
 {
