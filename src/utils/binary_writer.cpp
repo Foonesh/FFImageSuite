@@ -1,4 +1,4 @@
-#include <utils/binary_reader.hpp>
+/*#include <utils/binary_reader.hpp>
 
 #include <fstream>
 #include <sstream>
@@ -18,3 +18,4 @@ std::string binary_reader::get_actual_file_contents()
   return stream.str();
 }
 
+*/

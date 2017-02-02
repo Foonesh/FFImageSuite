@@ -1,10 +1,8 @@
-#include <commands/impl/command_exit.hpp>
+#include <commands/impl/command_merge.hpp>
 
-#include <cstdlib> // tu chyba jest exit ; O
+const std::string command_merge::name_("merge");
 
-const std::string command_exit::name_("exit");
-
-void command_exit::execute(char** arguments)
+void command_merge::execute(char** arguments)
 {
   exit(0);
 }

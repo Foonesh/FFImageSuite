@@ -6,7 +6,7 @@ const std::string command_split::name_("split");
 
 void command_split::execute(char** arguments)
 {
-  binary_reader reader(arguments[0]);
+  /*binary_reader reader(arguments[0]);
   std::string contents(reader.get_actual_file_contents());
   unsigned int width = *(unsigned int*)&contents[0x12];
   *(unsigned int*)&contents[0x12] /= 2;
@@ -31,5 +31,5 @@ void command_split::execute(char** arguments)
       else //dol
         filesOut[3].write(&contents[bmp_header_size_ + i], 3);
     }
-
+	*/
 }

@@ -19,6 +19,7 @@ set(SOURCES
 	src/commands/impl/command_flip.cpp
 	src/utils/binary_reader.cpp
 	src/utils/binary_writer.cpp
+	src/utils/bmp_format.cpp
 )
 
 set(HEADERS
@@ -36,6 +37,7 @@ set(HEADERS
 	inc/commands/impl/command_flip.hpp
 	inc/utils/binary_reader.hpp
 	inc/utils/binary_writer.hpp
+	inc/utils/bmp_format.hpp
 )
 
 add_executable(${PROJECT_NAME} ${SOURCES} ${HEADERS})

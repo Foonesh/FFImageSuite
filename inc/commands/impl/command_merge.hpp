@@ -2,10 +2,9 @@
 
 #include <commands/command.hpp>
 
-class command_split
+class command_merge
   : public command
 {
-    static const unsigned int bmp_header_size_ = 0x36;
 
   public:
 

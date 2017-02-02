@@ -1,10 +1,8 @@
-#include <commands/impl/command_exit.hpp>
+#include <commands/impl/command_mix.hpp>
 
-#include <cstdlib> // tu chyba jest exit ; O
+const std::string command_mix::name_("mix");
 
-const std::string command_exit::name_("exit");
-
-void command_exit::execute(char** arguments)
+void command_mix::execute(char** arguments)
 {
   exit(0);
 }
