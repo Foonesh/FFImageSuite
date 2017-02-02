@@ -16,7 +16,7 @@ class command_factory
     using factory_method = std::function<pointer()>;
     using dictionary = std::map<std::string, factory_method>;
 
-    static pointer construct(const std::string& commandline);
+    static pointer construct(const char* command_name);
 
     static const dictionary& get_command_dictionary();
 };

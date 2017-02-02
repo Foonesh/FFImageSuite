@@ -8,7 +8,7 @@ class command_help
 
   public:
 
-    virtual void execute() override;
+    virtual void execute(char** arguments) override;
 
     static const std::string name_;
 

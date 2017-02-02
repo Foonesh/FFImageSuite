@@ -3,15 +3,18 @@
 #include <iostream>
 #include <stdexcept>
 
-int main(void)
+int main(int argc, char** argv)
 {
-  std::string line;
-  while(std::cin >> line)
+  if (argc < 2)
+  {
+    std::cout << "Missing command line" << std::endl;
+    return 0;
+  }
   {
     try
     {
-      auto cmd(command_factory::construct(line));
-      cmd->execute();
+      auto cmd(command_factory::construct(argv[1]));
+      cmd->execute(argv + 2);
     }
     catch(const std::exception& e)
     {
