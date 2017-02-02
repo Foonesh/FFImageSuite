@@ -30,6 +30,8 @@ set(HEADERS
 	inc/utils/binary_reader.hpp
 )
 
+add_subdirectory(tests)
+
 add_executable(${PROJECT_NAME} ${SOURCES} ${HEADERS})
 
 target_include_directories(${PROJECT_NAME} PRIVATE inc)
