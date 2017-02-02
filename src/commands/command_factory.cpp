@@ -3,6 +3,9 @@
 #include <commands/impl/command_help.hpp>
 #include <commands/impl/command_load_bmp.hpp>
 #include <commands/impl/command_man.hpp>
+#include <commands/impl/command_greyscale.hpp>
+#include <commands/impl/command_rotate.hpp>
+#include <commands/impl/command_split.hpp>
 
 template <typename T>
 std::pair<std::string, command_factory::factory_method> make_handler()
@@ -16,12 +19,12 @@ std::pair<std::string, command_factory::factory_method> make_handler()
   };
 }
 
-command_factory::pointer command_factory::construct(const std::string& commandline)
+command_factory::pointer command_factory::construct(const char* command_name)
 {
   // tu oczywisce potrzeba jakiegos tokenizera aby rozbic komende i parametry
   // aby map::at() dostal jedynie polecenie do porownania
   //temp wersja dla testu helpa i exita
-  return get_command_dictionary().at(commandline)();
+  return get_command_dictionary().at(command_name)();
 }
 
 const command_factory::dictionary& command_factory::get_command_dictionary()
@@ -31,7 +34,10 @@ const command_factory::dictionary& command_factory::get_command_dictionary()
     make_handler<command_exit>(),
     make_handler<command_help>(),
     make_handler<command_load_bmp>(),
-	make_handler<command_man>()
+    make_handler<command_man>(),
+    make_handler<command_greyscale>(),
+    make_handler<command_rotate>(),
+    make_handler<command_split>(),
   };
   return factory_method_table;
 }

@@ -5,7 +5,7 @@
 
 const std::string command_man::name_("man");
 
-void command_man::execute()
+void command_man::execute(char** arguments)
 {
   std::cout << "NAME";
   std::cout << "FFImageSuite";

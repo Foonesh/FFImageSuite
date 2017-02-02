@@ -2,9 +2,10 @@
 
 #include <commands/command.hpp>
 
-class command_man
+class command_split
   : public command
 {
+    static const unsigned int bmp_header_size_ = 0x36;
 
   public:
 
@@ -13,3 +14,4 @@ class command_man
     static const std::string name_;
 
 };
+

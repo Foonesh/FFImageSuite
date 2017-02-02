@@ -2,8 +2,6 @@ cmake_minimum_required(VERSION 3.5)
 
 project(Converter)
 
-add_subdirectory(tests)
-
 set (CMAKE_CXX_STANDARD 14)
 
 set(SOURCES
@@ -13,6 +11,9 @@ set(SOURCES
 	src/commands/impl/command_help.cpp
 	src/commands/impl/command_load_bmp.cpp
 	src/commands/impl/command_man.cpp
+	src/commands/impl/command_greyscale.cpp
+	src/commands/impl/command_split.cpp
+	src/commands/impl/command_rotate.cpp
 	src/utils/binary_reader.cpp
 )
 
@@ -23,6 +24,9 @@ set(HEADERS
 	inc/commands/impl/command_help.hpp
 	inc/commands/impl/command_load_bmp.hpp
 	inc/commands/impl/command_man.hpp
+	inc/commands/impl/command_greyscale.hpp
+	inc/commands/impl/command_split.hpp
+	inc/commands/impl/command_rotate.hpp
 	inc/utils/binary_reader.hpp
 )
 
@@ -30,5 +34,5 @@ add_executable(${PROJECT_NAME} ${SOURCES} ${HEADERS})
 
 target_include_directories(${PROJECT_NAME} PRIVATE inc)
 
-target_compile_options(${PROJECT_NAME} PRIVATE -Wall)
+#target_compile_options(${PROJECT_NAME} PRIVATE -Wall)
 

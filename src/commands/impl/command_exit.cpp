@@ -4,7 +4,7 @@
 
 const std::string command_exit::name_("exit");
 
-void command_exit::execute()
+void command_exit::execute(char** arguments)
 {
   exit(0);
 }
