@@ -34,7 +34,7 @@ const command_factory::dictionary& command_factory::get_command_dictionary()
     make_handler<command_exit>(),
     make_handler<command_help>(),
     make_handler<command_load_bmp>(),
-    make_handler<command_man>(),
+    //make_handler<command_man>(),
     make_handler<command_greyscale>(),
     make_handler<command_rotate>(),
     make_handler<command_split>(),
