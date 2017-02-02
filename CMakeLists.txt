@@ -14,7 +14,11 @@ set(SOURCES
 	src/commands/impl/command_greyscale.cpp
 	src/commands/impl/command_split.cpp
 	src/commands/impl/command_rotate.cpp
+	src/commands/impl/command_merge.cpp
+	src/commands/impl/command_mix.cpp
+	src/commands/impl/command_flip.cpp
 	src/utils/binary_reader.cpp
+	src/utils/binary_writer.cpp
 )
 
 set(HEADERS
@@ -27,14 +31,15 @@ set(HEADERS
 	inc/commands/impl/command_greyscale.hpp
 	inc/commands/impl/command_split.hpp
 	inc/commands/impl/command_rotate.hpp
+	inc/commands/impl/command_merge.hpp
+	inc/commands/impl/command_mix.hpp
+	inc/commands/impl/command_flip.hpp
 	inc/utils/binary_reader.hpp
+	inc/utils/binary_writer.hpp
 )
-
-add_subdirectory(tests)
 
 add_executable(${PROJECT_NAME} ${SOURCES} ${HEADERS})
 
 target_include_directories(${PROJECT_NAME} PRIVATE inc)
 
 #target_compile_options(${PROJECT_NAME} PRIVATE -Wall)
-

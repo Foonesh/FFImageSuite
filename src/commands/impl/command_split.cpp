@@ -14,7 +14,7 @@ void command_split::execute(char** arguments)
   *(unsigned int*)&contents[0x16] /= 2;
 
   std::ofstream filesOut[4];
-  for(int i=0;i<4;++i) filesOut[i].open(arguments[i+1], std::ios::binary);
+  for(int i = 0; i < 4; ++i) filesOut[i].open(arguments[i + 1], std::ios::binary);
   for(int i = 0; i < 4; ++i) filesOut[i].write(contents.c_str(), bmp_header_size_);
   for (size_t i = 0; i < width * height * 3; i += 3)
     if ((i / 3) % width < width / 2) // lewa strona
