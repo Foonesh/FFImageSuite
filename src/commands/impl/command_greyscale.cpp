@@ -1,23 +1,29 @@
 #include <commands/impl/command_greyscale.hpp>
-#include <utils/binary_reader.hpp>
-#include <fstream>
+#include <utils/bmp_format.hpp>
+#include <utils/binary_writer.hpp>
 
 const std::string command_greyscale::name_("greyscale");
 
-void command_greyscale::execute(char** arguments)
+void command_greyscale::execute(int argc, char** arguments)
 {
-  binary_reader reader(arguments[0]);
-  std::string contents(reader.get_actual_file_contents());
-  unsigned int width = *(unsigned int*)&contents[0x12];
-  unsigned int height = *(unsigned int*)&contents[0x16];
-  std::ofstream fileOut(arguments[1], std::ios::binary);
-  fileOut.write(contents.c_str(), bmp_header_size_);
-  for (size_t i = 0; i < width * height * 3; i += 3)
+  if (argc != 2)
+    throw std::invalid_argument("Greyscale has to be called with 2 arguments");
+  bmp_format bmpfile(arguments[0]);
+  binary_writer writer(arguments[1]);
+  bmpfile.dump_header(writer.file);
+  auto width = bmpfile.get_width();
+  auto height = bmpfile.get_height();
+  rgb** pixels = bmpfile.get_pixels();
+  for (std::size_t i = 0; i < height; ++i)
   {
-    int summed_color = ((int)contents[bmp_header_size_ + i] +
-                        (int)contents[bmp_header_size_ + i + 1] +
-                        (int)contents[bmp_header_size_ + i + 2]) / 3;
-    for(int k = 0; k < 3; k++) fileOut.write((char*)&summed_color, 1);
-
+    for (std::size_t k = 0; k < width; ++k)
+    {
+      int sum = pixels[i][k].r + pixels[i][k].g + pixels[i][k].b;
+      sum /= 3;
+      pixels[i][k].r = (char)sum;
+      pixels[i][k].g = (char)sum;
+      pixels[i][k].b = (char)sum;
+    }
+    writer.write(pixels[i], width * sizeof(rgb));
   }
 }

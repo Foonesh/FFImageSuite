@@ -1,18 +1,16 @@
-/*#pragma once
+#pragma once
 
 #include <string>
+#include <fstream>
 
-class binary_reader
+class binary_writer
 {
-
-    const std::string filepath;
 
   public:
 
-    binary_reader(const std::string& filepath);
+    binary_writer(const std::string& filepath);
 
-    std::string get_actual_file_contents();
+    void write(void* data, std::size_t size);
 
+	std::ofstream file; //qq
 };
-
-*/

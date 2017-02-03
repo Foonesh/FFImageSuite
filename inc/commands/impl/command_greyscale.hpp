@@ -9,7 +9,7 @@ class command_greyscale
 
   public:
 
-    virtual void execute(char** arguments) override;
+    virtual void execute(int argc, char** arguments) override;
 
     static const std::string name_;
 

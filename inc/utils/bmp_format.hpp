@@ -1,6 +1,8 @@
 #pragma once
 
 #include <string>
+#include <iostream>
+#include <array>
 
 struct rgb
 {
@@ -13,6 +15,7 @@ class bmp_format
 	std::size_t width;
 	std::size_t height;
     rgb** pixels;
+	std::array<char, 0x36> header;
 
   public:
 
@@ -23,10 +26,13 @@ class bmp_format
     bmp_format& operator=(const bmp_format&) = delete;
     bmp_format& operator=(bmp_format&&) = delete;
 
-	const std::string& get_filename() { return filename; };
-	std::size_t get_width() { return width; };
-	std::size_t get_height() { return height; };
-	rgb** get_pixels() { return pixels; };
+	const std::string& get_filename() const { return filename; };
+	std::size_t get_width() const { return width; };
+	std::size_t get_height() const { return height; };
+	rgb** get_pixels() const { return pixels; };
+	void dump_header(std::ostream& o) const;
+	void dump_header(std::ostream& o, std::size_t new_width, std::size_t new_height) const; // to troche smierdzi. 
+	//Chce wypisac bitmape ze zmniejszonymi/zwiekszonymi wymiarami, ale width i height sa uzywane przez tablice pixeli
 
     static const std::size_t bmp_header_size_ = 0x36;
 

@@ -5,7 +5,7 @@
 
 const std::string command_help::name_("help");
 
-void command_help::execute(char** arguments)
+void command_help::execute(int argc, char** arguments)
 {
   std::cout << "List of supported commands\n";
   for (const auto& elem : command_factory::get_command_dictionary())

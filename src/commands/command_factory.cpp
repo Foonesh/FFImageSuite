@@ -2,10 +2,12 @@
 #include <commands/impl/command_exit.hpp>
 #include <commands/impl/command_help.hpp>
 #include <commands/impl/command_load_bmp.hpp>
-#include <commands/impl/command_man.hpp>
 #include <commands/impl/command_greyscale.hpp>
 #include <commands/impl/command_rotate.hpp>
 #include <commands/impl/command_split.hpp>
+#include <commands/impl/command_mix.hpp>
+#include <commands/impl/command_merge.hpp>
+#include <commands/impl/command_flip.hpp>
 
 template <typename T>
 std::pair<std::string, command_factory::factory_method> make_handler()
@@ -34,10 +36,12 @@ const command_factory::dictionary& command_factory::get_command_dictionary()
     make_handler<command_exit>(),
     make_handler<command_help>(),
     make_handler<command_load_bmp>(),
-    //make_handler<command_man>(),
     make_handler<command_greyscale>(),
     make_handler<command_rotate>(),
     make_handler<command_split>(),
+    make_handler<command_mix>(),
+    make_handler<command_merge>(),
+    make_handler<command_flip>(),
   };
   return factory_method_table;
 }

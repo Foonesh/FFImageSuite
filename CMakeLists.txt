@@ -10,7 +10,6 @@ set(SOURCES
 	src/commands/impl/command_exit.cpp
 	src/commands/impl/command_help.cpp
 	src/commands/impl/command_load_bmp.cpp
-	src/commands/impl/command_man.cpp
 	src/commands/impl/command_greyscale.cpp
 	src/commands/impl/command_split.cpp
 	src/commands/impl/command_rotate.cpp
@@ -28,7 +27,6 @@ set(HEADERS
 	inc/commands/impl/command_exit.hpp
 	inc/commands/impl/command_help.hpp
 	inc/commands/impl/command_load_bmp.hpp
-	inc/commands/impl/command_man.hpp
 	inc/commands/impl/command_greyscale.hpp
 	inc/commands/impl/command_split.hpp
 	inc/commands/impl/command_rotate.hpp
