@@ -9,7 +9,7 @@ const std::string command_split::name_("split");
 void command_split::execute(int argc, char** arguments)
 {
   if (argc != 1)
-    throw std::invalid_argument("Flip has to be called with 1 argument");
+    throw std::invalid_argument("Split has to be called with 1 argument");
   bmp_format bmpfile(arguments[0]);
   binary_writer writers[4] { std::string("1_") + arguments[0],
                              std::string("2_") + arguments[0],
